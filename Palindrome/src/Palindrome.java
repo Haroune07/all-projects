@@ -18,5 +18,6 @@ public class Palindrome {
         }
 
         scan.close();
+        //add
     }
 }
