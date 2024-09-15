@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Time;
 import java.util.Random;
 
 public class ReflexGame implements ActionListener {
@@ -33,6 +34,7 @@ public class ReflexGame implements ActionListener {
     int StartingIn = 4;
     int missedShots = 0;
     int accurateShots;
+    int EndsIn = 20;
 
     public ReflexGame() throws InterruptedException {
 
@@ -77,7 +79,7 @@ public class ReflexGame implements ActionListener {
                 StartingIn--;
 
                 if (StartingIn > 0) {
-                    Showcount();
+                    Showcountto3();
                 }
 
                 if (StartingIn <= 0) {
@@ -87,14 +89,21 @@ public class ReflexGame implements ActionListener {
             }
         });
 
-        countTimer.setInitialDelay(1000);
+        countTimer.setInitialDelay(2000);
         countTimer.start();
 
-        Timer firstRedButton = new Timer(3000, e -> redButton());
+        Timer firstRedButton = new Timer(4000, e -> redButton());
         firstRedButton.setRepeats(false);
         firstRedButton.start();
 
-        Timer endGameTimer = new Timer(23000, new ActionListener() {
+        Timer CountDownTimer = new Timer(1000, e -> ShowCountDowntoEnd());
+        CountDownTimer.setInitialDelay(5000);
+
+        for(int i = 0; i < 20; i++){
+            CountDownTimer.start();
+        }
+
+        Timer endGameTimer = new Timer(25000, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 frame.getContentPane().setBackground(Color.DARK_GRAY);
 
@@ -141,8 +150,8 @@ public class ReflexGame implements ActionListener {
         for (int i = 0; i < buttons.length; i++) {
             if (e.getSource() == buttons[i] && buttons[i].getBackground() == Color.red) {
 
-                System.out.println("cool");
-                score += 10;
+                accurateShots++;
+                score += 1;
                 scoreLabel.setText("Your score is: " + score);
 
                 cleanlastButton();
@@ -150,7 +159,7 @@ public class ReflexGame implements ActionListener {
             }
 
             else if (e.getSource() == buttons[i] && buttons[i].getBackground() != Color.red) {
-                score -= 5;
+                score -= 1;
                 scoreLabel.setText("Your score is: " + score);
                 missedShots++;
             }
@@ -174,8 +183,12 @@ public class ReflexGame implements ActionListener {
         buttons[r].setBackground(Color.WHITE);
     }
 
-    public void Showcount() {
+    public void Showcountto3() {
         textLabel.setText("Game starts in " + String.valueOf(StartingIn));
+    }
+    
+    public void ShowCountDowntoEnd(){
+        textLabel.setText(String.valueOf(EndsIn-=1));
     }
 
     public static void main(String[] args) throws InterruptedException {
