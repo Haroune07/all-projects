@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class App {
+public class PG {
     public static void main(String[] args) throws Exception {
         char[] characters = new char[77];
         int passwordLength;
@@ -33,6 +33,8 @@ public class App {
             Thread.sleep(50);
             System.out.print(characters[new Random().nextInt(characters.length)]);
         }
+
+        scan.close();
 
     }
 }

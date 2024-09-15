@@ -1,8 +1,8 @@
-import java.net.Socket;
+
 import java.util.Random;
 import java.util.Scanner;
 
-public class App {
+public class PFC {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
 

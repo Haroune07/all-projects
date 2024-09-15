@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class App {
+public class Palindrome {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         String str = scan.nextLine().toLowerCase().strip();
@@ -16,5 +16,7 @@ public class App {
         else{
             System.out.println("Not a palindrome. Boo!");
         }
+
+        scan.close();
     }
 }
