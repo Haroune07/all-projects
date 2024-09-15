@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class TwoSum {
     public static void main(String[] args) throws Exception {
         
-        int[] nums = {1, 3 , 5 , 7 , 9 ,14};
+        int[] nums = {1, 3 , 5 , 7 , 9 ,14,19};
         int target = new Scanner(System.in).nextInt();
 
         TwoSum sum = new TwoSum();
