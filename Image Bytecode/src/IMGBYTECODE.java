@@ -4,12 +4,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
-public class App {
+public class IMGBYTECODE {
     public static void main(String[] args) throws Exception {
         
         try {
 
-            File imagefile = new File("2D arrays\\src\\2ChocolateChipCookies.jpg");
+            File imagefile = new File("Image Bytecode\\src\\2ChocolateChipCookies.jpg");
             BufferedImage bufferedImage = ImageIO.read(imagefile);
 
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
