@@ -5,6 +5,8 @@ public class AppLauncher {
         SwingUtilities.invokeLater(new Runnable() {
             public void run(){
                 new WeatherAppGUI().setVisible(true);
+            
+                System.out.println(WeatherApp.getCurrentTime());
             }
         });
     }
