@@ -10,6 +10,7 @@ import org.json.simple.parser.JSONParser;
 
 public class WeatherApp {
 
+    @SuppressWarnings("unchecked")
     public static JSONObject getWeatherData(String locationName) {
         JSONArray locationData = getLocationData(locationName);
 
