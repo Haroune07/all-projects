@@ -5,7 +5,7 @@ public class TablesMul {
 
             System.out.println("Table de " + i + "\n");
 
-            for(int j = 1; j <= 10; j++){
+            for(int j = 1; j <= 12; j++){
 
                 int produit = i * j;
                 System.out.println("\t" + i + " x " + j + " = " + produit);

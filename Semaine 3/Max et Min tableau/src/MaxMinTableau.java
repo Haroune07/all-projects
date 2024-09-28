@@ -1,6 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
-
 public class MaxMinTableau {
     public static void main(String[] args) throws Exception {
         int[] array = { 15, 28, -5, 42, 9, 0 };

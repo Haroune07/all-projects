@@ -4,34 +4,30 @@ import java.util.Scanner;
 public class twoDimArraySum {
     public static void main(String[] args) throws Exception {
 
-        Random random = new Random();
-
         Scanner scan = new Scanner(System.in);
 
-        int x = scan.nextInt();
+        int n = scan.nextInt();
+        int m = scan.nextInt();
 
-        int y = scan.nextInt();
+        int[][] table2 = new int[n][m];
 
-        int somme = 0;
+        int sum = 0;
 
-        
-        int[][] twoDimArray = new int[x][y];
+        for(int i = 0; i < table2.length; i++){
 
-        for(int i = 0; i < twoDimArray[y-1].length; i++){
+            for(int j = 0; j < table2[i].length; j++){
 
-            for(int j = 0; i < twoDimArray[x-1].length; i++){
+                int randomInt = (int) (Math.random()*100);
 
-                int rX = random.nextInt(100+1);
+                table2[i][j] = randomInt;
 
-                twoDimArray[i][j] = rX;
+                sum += table2[i][j];
 
-                somme += twoDimArray[i][j];
             }
+
         }
 
-        System.out.println(somme);
-
-        scan.close();
+        System.out.println(sum);
     }
 }
 
