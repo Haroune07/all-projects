@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class App {
+public class ExoMDP {
     public static void main(String[] args) throws Exception {
         String mdp = "secret";
         String entrée;
@@ -18,6 +18,8 @@ public class App {
                 System.out.println("mot de passe incorrect. Réessayez.");
             }
         } while(!(entrée.equals(mdp)));
+
+        scan.close();
     
     }
 }
